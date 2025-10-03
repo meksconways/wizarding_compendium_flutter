@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../navigation/slide_right_navigation.dart';
 import 'hp_colors.dart';
 
 class HpTheme {
@@ -150,6 +151,12 @@ class HpTheme {
         contentTextStyle: TextStyle(color: cs.onInverseSurface),
         actionTextColor: cs.inversePrimary,
       ),
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: SlideRightTransitions(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        },
+      ),
     );
   }
 
@@ -225,6 +232,12 @@ class HpTheme {
         backgroundColor: cs.inverseSurface,
         contentTextStyle: TextStyle(color: cs.onInverseSurface),
         actionTextColor: cs.inversePrimary,
+      ),
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: SlideRightTransitions(),
+          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        },
       ),
     );
   }
