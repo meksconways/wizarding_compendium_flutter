@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-class HousesPage extends StatelessWidget {
-  const HousesPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('HousesPage')),
-      body: const Center(child: Text('HousesPage — içerik gelecek')),
-    );
-  }
-}
-
 class CharactersPage extends StatelessWidget {
   const CharactersPage({super.key});
 
