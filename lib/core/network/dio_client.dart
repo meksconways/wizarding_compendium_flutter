@@ -5,7 +5,7 @@ class DioClient {
 
   static final dio = Dio(
     BaseOptions(
-      baseUrl: "https://potterapi-fedeperin.vercel.app",
+      baseUrl: "https://potterapi-fedeperin.vercel.app/en",
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 15),
       headers: {'Accept': 'application/json'},
