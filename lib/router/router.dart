@@ -6,6 +6,8 @@ import '../app/app_shell.dart';
 import '../features/app_shell/widgets/temp_pages.dart';
 import '../features/books/presentation/pages/book_detail_page.dart';
 import '../features/books/presentation/pages/books_page.dart';
+import '../features/houses/presentation/pages/house_detail_page.dart';
+import '../features/houses/presentation/pages/houses_page.dart';
 
 final _rootKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final _booksKey = GlobalKey<NavigatorState>(debugLabel: 'books');
@@ -47,6 +49,13 @@ final routerProvider = Provider<GoRouter>((ref) {
                 path: '/houses',
                 pageBuilder: (_, _) =>
                     const NoTransitionPage(child: HousesPage()),
+              ),
+              GoRoute(
+                path: '/houseDetail/:index',
+                builder: (context, state) {
+                  final index = state.pathParameters['index']!;
+                  return HouseDetailPage(houseIndex: int.parse(index));
+                },
               ),
             ],
           ),
