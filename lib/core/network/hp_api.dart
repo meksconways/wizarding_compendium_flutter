@@ -12,4 +12,11 @@ class HpApi {
     throw Exception('Unexpected list response: $path');
   }
 
+  Future<Map<String, dynamic>> getSingleItem(String path, {Map<String, dynamic>? qp}) async {
+    final response = await _dio.get(path, queryParameters: qp);
+    final data = response.data;
+    if (data is Map<String, dynamic>) return data;
+    throw Exception('Unexpected map response: $path');
+  }
+
 }

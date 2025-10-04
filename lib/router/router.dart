@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../app/app_shell.dart';
 import '../features/app_shell/widgets/temp_pages.dart';
+import '../features/books/presentation/pages/book_detail_page.dart';
+import '../features/books/presentation/pages/books_page.dart';
 
 final _rootKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final _booksKey = GlobalKey<NavigatorState>(debugLabel: 'books');
@@ -26,12 +28,15 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: '/books',
-                pageBuilder: (_, __) =>
+                pageBuilder: (_, _) =>
                     const NoTransitionPage(child: BooksPage()),
               ),
               GoRoute(
-                path: '/bookDetail',
-                builder: (_,_) => const BookDetailPage(),
+                path: '/bookDetail/:index',
+                builder: (context, state) {
+                  final index = state.pathParameters['index']!;
+                  return BookDetailPage(index: int.parse(index));
+                },
               ),
             ],
           ),
@@ -40,7 +45,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: '/houses',
-                pageBuilder: (_, __) =>
+                pageBuilder: (_, _) =>
                     const NoTransitionPage(child: HousesPage()),
               ),
             ],
@@ -50,7 +55,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: '/characters',
-                pageBuilder: (_, __) =>
+                pageBuilder: (_, _) =>
                     const NoTransitionPage(child: CharactersPage()),
               ),
             ],
@@ -60,7 +65,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: '/spells',
-                pageBuilder: (_, __) =>
+                pageBuilder: (_, _) =>
                     const NoTransitionPage(child: SpellsPage()),
               ),
             ],
@@ -70,7 +75,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: '/quiz',
-                pageBuilder: (_, __) =>
+                pageBuilder: (_, _) =>
                     const NoTransitionPage(child: SpellsQuizPage()),
               ),
             ],
