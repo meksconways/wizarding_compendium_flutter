@@ -19,7 +19,7 @@ class HouseNotFoundException extends HouseException {
   const HouseNotFoundException(this.id);
 
   @override
-  String toString() => 'BookNotFoundException: Book with id=$id not found';
+  String toString() => 'HouseNotFoundException: House with id=$id not found';
 }
 
 class HouseInvalidDataException extends HouseException {
