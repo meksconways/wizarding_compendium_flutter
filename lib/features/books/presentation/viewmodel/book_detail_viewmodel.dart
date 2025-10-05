@@ -30,10 +30,12 @@ class BookDetailViewModel extends Notifier<BookDetailState> {
           error: 'Connection Error. Pls try again.',
         );
       case BookNotFoundException():
-        state = state.copyWith(error: 'Book is not found.');
+        state = state.copyWith(isLoading: false, error: 'Book is not found.');
       case BookInvalidDataException():
-        state = state.copyWith(error: 'Data format is invalid.');
+        state = state.copyWith(
+          isLoading: false,
+          error: 'Data format is invalid.',
+        );
     }
   }
-
 }

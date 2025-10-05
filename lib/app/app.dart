@@ -16,6 +16,7 @@ class HPApp extends ConsumerWidget {
       darkTheme: HpTheme.dark(),
       themeMode: ThemeMode.system,
       routerConfig: router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

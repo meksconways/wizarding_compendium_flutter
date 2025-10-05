@@ -6,6 +6,8 @@ import '../app/app_shell.dart';
 import '../features/app_shell/widgets/temp_pages.dart';
 import '../features/books/presentation/pages/book_detail_page.dart';
 import '../features/books/presentation/pages/books_page.dart';
+import '../features/characters/presentation/pages/character_detail_page.dart';
+import '../features/characters/presentation/pages/characters_page.dart';
 import '../features/houses/presentation/pages/house_detail_page.dart';
 import '../features/houses/presentation/pages/houses_page.dart';
 
@@ -66,6 +68,13 @@ final routerProvider = Provider<GoRouter>((ref) {
                 path: '/characters',
                 pageBuilder: (_, _) =>
                     const NoTransitionPage(child: CharactersPage()),
+              ),
+              GoRoute(
+                path: '/characterDetail/:index',
+                builder: (context, state) {
+                  final index = state.pathParameters['index']!;
+                  return CharacterDetailPage(index: int.parse(index));
+                },
               ),
             ],
           ),
