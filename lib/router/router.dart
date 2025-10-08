@@ -10,6 +10,7 @@ import '../features/characters/presentation/pages/character_detail_page.dart';
 import '../features/characters/presentation/pages/characters_page.dart';
 import '../features/houses/presentation/pages/house_detail_page.dart';
 import '../features/houses/presentation/pages/houses_page.dart';
+import '../features/spells/presentation/pages/spells_page.dart';
 
 final _rootKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final _booksKey = GlobalKey<NavigatorState>(debugLabel: 'books');
